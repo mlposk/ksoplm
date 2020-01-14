@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="header">
+    <h1>{{title}}</h1>
+    <h3><a href="https://nasa.gov/">NASA</a> | {{response.date}}</h3>
+    <h2>{{response.title}}</h2>
+  </div>
+
+  <div class="content">
+    <div class="potd" [style.backgroundImage]="'url(' + response.url + ')'"></div>
+    <p>{{response.explanation}} &#9699;</p>
+  </div>
+</div>
