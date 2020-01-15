@@ -1,175 +1,121 @@
-@font-face {
-  font-family: "NeueMachina";
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+nav, section, .article-content, .article-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+.article-title {
+  width: 80%;
+}
+.article-wrapper{
+  background: linear-gradient(120deg, #0029FF 0%, #001270 100%), radial-gradient(100% 222% at 0% 100%, #CD04FF 0%, #FF004D 57%), linear-gradient(270deg, #F2096B 0%, #ED0B0B 100%), linear-gradient(300deg, #C478B3 0%, #EA2856 100%), radial-gradient(90% 110% at 100% 100%, #96A300 45%, #875901 100%), linear-gradient(6.54deg, #20ADFD 7%, #1700A4 50%);
+  background-blend-mode: exclusion, color-dodge, color-burn, color-burn, color-dodge, normal;
+  padding: 20px;
+  margin: 0 10% 50px;
+}
+.article-content {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  padding: 0;
+}
+.article-right {
+  margin: 30px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.article-image {
+  background-size: cover;
+  min-height: 500px;
+  max-height: 1000px;
+  width: 100%;
+  margin: 30px;
+}
+.article-content p {
+  width: 500px;
+  line-height: 2;
+}
+.article-title h2 {
+  align-self: self-start;
+  margin: 0 0 .3em;
+  line-height: 0.8;
+  letter-spacing: -8.5px;
   font-weight: 300;
-  src: url("src/assets/fonts/NeueMachina-Light.otf") format("opentype");
+  font-size: 7em;
 }
-@font-face {
-  font-family: "NeueMachina";
-  font-weight: 400;
-  src: url("src/assets/fonts/NeueMachina-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "NeueMachina";
-  font-weight: 800;
-  src: url("src/assets/fonts/NeueMachina-Ultrabold.otf") format("opentype");
+h3 {
+  margin: 0;
 }
 
-a{
-  text-decoration: none;
-  font-weight: 400;
-}
-h1, h2, h3, p {
-  font-family: "NeueMachina", sans-serif;
-  color: #fff;
-}
-@media screen and (min-width: 1440px) {
-  .container {
-    height: 100%;
-    padding: 0 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: flex-end;
+@media screen and (min-width:320px) and (max-width:640px) {
+  nav, section, .article-content, .article-title{
+    margin: 0;
+    padding: 0 20px;
   }
-  .header, .content {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    width: 40%;
+  .article-title h2 {
+    letter-spacing: -2px;
+    font-size: 3.1em;
   }
-  .potd{
-    height: 50vh;
-    background-size: cover;
+  .article-wrapper{
+    padding: 15px;
+    margin: 0 15px 30px;
   }
-  h1, h2, h3{
-    line-height: 1;
-    text-transform: uppercase;
-    transform: skew(-7deg, 0);
-  }
-  h1 {
-    font-weight: 800;
-    font-size: 6.5em;
-    margin: 80px 0 45px 54px;
-  }
-  h2, h3 {
-    font-weight: 300;
-  }
-  h2{
-    font-size: 7.5em;
-    margin: 20px 0 80px 0;
-  }
-  h3{
-    font-size: 2em;
-    margin: 0 0 0 47px;
-  }
-  p{
-    font-weight: 400;
-    margin: 80px 0;
-    line-height: 2;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .container {
-    height: 100%;
-    padding: 0;
-    display: flex;
+  .article-content {
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    padding: 0;
   }
-  .header, .content {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
+  .article-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vw;
+    margin: 0;
+  }
+  .article-right {
+    margin: 15px
+  }
+  .article-content p {
     width: 100%;
   }
-  .potd{
-    height: 50vh;
-    background-position: center center;
-    background-size: cover;
-  }
-  h1, h2, h3{
-    font-family: "NeueMachina", sans-serif;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #fff;
-    transform: skew(-7deg, 0);
-  }
-  h1 {
-    font-weight: 800;
-    font-size: 3.5em;
-    margin: 45px 0 26px 49px;
-  }
-  h2, h3 {
-    font-weight: 300;
-  }
-  h2{
-    font-size: 3em;
-    margin: 0 0 20px 25px;
-  }
-  h3{
-    font-size: 1.4em;
-    margin: 0 0 10px 43px;
-  }
-  p {
-    margin: 0;
-    padding: 20px 20px 70px 20px;
-  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
-  .container {
-    height: 100%;
-    padding: 0 25px;
+@media screen and (min-width:640px) and (max-width:1024px) {
+  nav, section, .article-content, .article-title{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 15px;
   }
-  .header, .content {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    width: 50%;
+  .article-title {
+    width: 80%;
   }
-  .potd{
-    height: 50vh;
-    background-position: center center;
-    background-size: contain;
+  .article-wrapper{
+    background: linear-gradient(120deg, #0029FF 0%, #001270 100%), radial-gradient(100% 222% at 0% 100%, #CD04FF 0%, #FF004D 57%), linear-gradient(270deg, #F2096B 0%, #ED0B0B 100%), linear-gradient(300deg, #C478B3 0%, #EA2856 100%), radial-gradient(90% 110% at 100% 100%, #96A300 45%, #875901 100%), linear-gradient(6.54deg, #20ADFD 7%, #1700A4 50%);
+    background-blend-mode: exclusion, color-dodge, color-burn, color-burn, color-dodge, normal;
+    padding: 15px;
+    margin: 0 15px 15px;
   }
-  h1, h2, h3{
-    line-height: 1;
-    text-transform: uppercase;
-    transform: skew(-7deg, 0);
-  }
-  h1 {
-    font-weight: 800;
-    font-size: 3.5em;
-    margin: 40px 0 30px 29px;
-  }
-  h2, h3 {
-    font-weight: 300;
-  }
-  h2{
-    font-size: 4em;
-    margin: 20px 0 60px 0;
-  }
-  h3{
-    font-size: 1.5em;
-    margin: 0 0 0 20px;
-  }
-  p{
-    font-weight: 400;
-    margin: 20px 0 60px;
-    line-height: 1.5;
+  .article-content {
+    width: 100%;
+    background: #ffffff;
+    color: #000000;
     padding: 0;
   }
+  .article-right {
+    margin: 15px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .article-image {
+    margin: 15px;
+  }
 }
-

@@ -1,7 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "NeueMachina";
+  font-weight: 300;
+  src: url("src/assets/fonts/NeueMachina-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "NeueMachina";
+  font-weight: 400;
+  src: url("src/assets/fonts/NeueMachina-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "NeueMachina";
+  font-weight: 800;
+  src: url("src/assets/fonts/NeueMachina-Ultrabold.otf") format("opentype");
+}
+
 html, body {
   margin: 0;
   height: 100%;
-  background: #000;
-  color: #fff;
+}
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: NeueMachina, sans-serif;
+}
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+a {
+  color: #09f;
+  text-decoration: none;
+}
+a:visited{
+  color: #ff00ff
 }

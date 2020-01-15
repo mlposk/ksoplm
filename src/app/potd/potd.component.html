@@ -1,12 +1,18 @@
-<div class="container">
-  <div class="header">
-    <h1>{{title}}</h1>
-    <h3><a href="https://nasa.gov/">NASA</a> | {{response.date}}</h3>
-    <h2>{{response.title}}</h2>
-  </div>
+<nav>
+  <h1><a href="/">{{title}}</a></h1>
+  <h1><a class="feedback" href="mailto:admin@mlposk.ml">feedback</a></h1>
+</nav>
 
-  <div class="content">
-    <div class="potd" [style.backgroundImage]="'url(' + response.url + ')'"></div>
-    <p>{{response.explanation}} &#9699;</p>
-  </div>
-</div>
+<section class="article-title">
+  <h2>{{response.title}}</h2>
+</section>
+
+<section class="article-wrapper">
+  <article class="article-content">
+      <div class="article-image" [style.backgroundImage]="'url(' + response.url + ')'"></div>
+      <div class="article-right">
+        <h3><a href="https://nasa.gov/">NASA</a> | {{response.date}}</h3>
+        <p>{{response.explanation}} &#9699;</p>
+      </div>
+  </article>
+</section>
