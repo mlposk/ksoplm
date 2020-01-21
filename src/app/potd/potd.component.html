@@ -1,18 +1,18 @@
-<nav>
-  <h1><a href="/">{{title}}</a></h1>
-  <h1><a class="feedback" href="mailto:admin@mlposk.ml">feedback</a></h1>
-</nav>
+<div *ngIf="response">
+  <section class="text-uppercase article-title">
+    <h1>{{response.title}}</h1>
+  </section>
 
-<section class="article-title">
-  <h2>{{response.title}}</h2>
-</section>
-
-<section class="article-wrapper">
-  <article class="article-content">
-      <div class="article-image" [style.backgroundImage]="'url(' + response.url + ')'"></div>
-      <div class="article-right">
-        <h3><a href="https://nasa.gov/">NASA</a> | {{response.date}}</h3>
+  <section class="article-wrapper">
+    <article class="article-content">
+      <div *ngIf="response.media_type === 'image'" class="article-image"><img [src]="'response.url'" alt=""></div>
+      <div *ngIf="response.media_type === 'video'" class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" [src]="sanitizeURL(this.response.youtubeURL)" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="article-col">
+        <h1><a href="https://nasa.gov/" class="link-magenta-dark">NASA</a> | {{response.date}}</h1>
         <p>{{response.explanation}} &#9699;</p>
       </div>
-  </article>
-</section>
+    </article>
+  </section>
+</div>
