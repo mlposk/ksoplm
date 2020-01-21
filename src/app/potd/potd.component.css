@@ -1,121 +1,134 @@
-body{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-nav, section, .article-content, .article-title{
+section, .article-content, .article-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 10%;
 }
+
 .article-title {
-  width: 80%;
+  align-self: self-start;
 }
-.article-wrapper{
+
+.article-title h1 {
+  line-height: 0.8;
+  margin: 0;
+}
+
+.article-wrapper {
   background: linear-gradient(120deg, #0029FF 0%, #001270 100%), radial-gradient(100% 222% at 0% 100%, #CD04FF 0%, #FF004D 57%), linear-gradient(270deg, #F2096B 0%, #ED0B0B 100%), linear-gradient(300deg, #C478B3 0%, #EA2856 100%), radial-gradient(90% 110% at 100% 100%, #96A300 45%, #875901 100%), linear-gradient(6.54deg, #20ADFD 7%, #1700A4 50%);
   background-blend-mode: exclusion, color-dodge, color-burn, color-burn, color-dodge, normal;
-  padding: 20px;
-  margin: 0 10% 50px;
 }
+
 .article-content {
   width: 100%;
   background: #ffffff;
   color: #000000;
-  padding: 0;
 }
-.article-right {
-  margin: 30px;
-  width: auto;
+
+.article-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.article-image {
-  background-size: cover;
-  min-height: 500px;
-  max-height: 1000px;
-  width: 100%;
-  margin: 30px;
+
+.article-col h1 {
+  font-size: 1em;
 }
-.article-content p {
-  width: 500px;
+
+.article-col h1 a {
+  font-weight: 800;
+}
+
+.article-col p {
   line-height: 2;
-}
-.article-title h2 {
-  align-self: self-start;
-  margin: 0 0 .3em;
-  line-height: 0.8;
-  letter-spacing: -8.5px;
-  font-weight: 300;
-  font-size: 7em;
-}
-h3 {
   margin: 0;
 }
 
-@media screen and (min-width:320px) and (max-width:640px) {
-  nav, section, .article-content, .article-title{
-    margin: 0;
-    padding: 0 20px;
+@media (min-width: 320px) {
+  section, .article-title{
+    padding: 0 1.25rem;
   }
-  .article-title h2 {
-    letter-spacing: -2px;
-    font-size: 3.1em;
+  .article-title {
+    align-self: self-start;
+    margin: 0 0 1em;
   }
-  .article-wrapper{
-    padding: 15px;
-    margin: 0 15px 30px;
+  .article-title h1 {
+    width: 100%;
+    letter-spacing: -0.1rem;
+    font-size: 4rem;
+  }
+  .article-wrapper {
+    padding: 1rem;
+    margin: 0 1.25rem 2.5rem;
   }
   .article-content {
+    display: flex;
     flex-direction: column;
-    padding: 0;
+    justify-content: flex-start;
+  }
+  .article-col {
+    width: 100%;
+    padding: 1rem;
   }
   .article-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vw;
-    margin: 0;
-  }
-  .article-right {
-    margin: 15px
-  }
-  .article-content p {
-    width: 100%;
+    padding: 1rem 0 1rem 1rem;
   }
 }
 
-@media screen and (min-width:640px) and (max-width:1024px) {
-  nav, section, .article-content, .article-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 15px;
+@media (min-width: 640px) {
+  section, .article-title{
+    padding: 0 2.5rem;
   }
   .article-title {
-    width: 80%;
+    align-self: self-start;
+    margin: 0 0 2em;
   }
-  .article-wrapper{
-    background: linear-gradient(120deg, #0029FF 0%, #001270 100%), radial-gradient(100% 222% at 0% 100%, #CD04FF 0%, #FF004D 57%), linear-gradient(270deg, #F2096B 0%, #ED0B0B 100%), linear-gradient(300deg, #C478B3 0%, #EA2856 100%), radial-gradient(90% 110% at 100% 100%, #96A300 45%, #875901 100%), linear-gradient(6.54deg, #20ADFD 7%, #1700A4 50%);
-    background-blend-mode: exclusion, color-dodge, color-burn, color-burn, color-dodge, normal;
-    padding: 15px;
-    margin: 0 15px 15px;
+  .article-title h1 {
+    letter-spacing: -0.1rem;
+    font-size: 5.5rem;
+  }
+  .article-wrapper {
+    padding: 1rem;
+    margin: 0 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  section, .article-title {
+    padding: 0 5rem;
+  }
+  .article-wrapper {
+    padding: 1rem;
+    margin: 0 5rem 2rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  section, .article-title {
+    padding: 0 10rem;
+  }
+  .article-title h1 {
+    width: 85%;
+    letter-spacing: -0.1rem;
+    font-size: 6rem;
+  }
+  .article-wrapper {
+    padding: 1rem;
+    margin: 0 10rem 2rem;
   }
   .article-content {
-    width: 100%;
-    background: #ffffff;
-    color: #000000;
-    padding: 0;
-  }
-  .article-right {
-    margin: 15px;
-    width: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+  }
+  .article-col {
+    padding: 2rem;
+    width: 40%;
   }
   .article-image {
-    margin: 15px;
+    padding: 2rem 0 2rem 2rem;
   }
 }

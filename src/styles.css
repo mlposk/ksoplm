@@ -14,25 +14,77 @@
   src: url("src/assets/fonts/NeueMachina-Ultrabold.otf") format("opentype");
 }
 
+@media (min-width: 320px) {
+  html {
+    font-size: 12pt;
+  }
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 12pt;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 13pt;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 14pt;
+  }
+}
+
 html, body {
   margin: 0;
   height: 100%;
 }
+
 body {
-  background: #000000;
-  color: #ffffff;
-  font-family: NeueMachina, sans-serif;
-}
-h1, h2, h3 {
-  text-transform: uppercase;
-}
-a {
-  color: #09f;
-  text-decoration: none;
-}
-a:visited{
-  color: #ff00ff
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #000;
+  font-family: NeueMachina, Roboto, "Helvetica Neue", sans-serif;
+  color: #fff;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {
+  transition: color .25s ease;
+}
+
+.link-magenta:hover,
+.link-magenta:hover:visited,
+.link-magenta:active,
+.link-cyan:hover,
+.link-cyan:hover:visited,
+.link-cyan:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link-magenta-dark:hover,
+.link-magenta-dark:hover:visited,
+.link-magenta-dark:active,
+.link-cyan-dark:hover,
+.link-cyan-dark:hover:visited,
+.link-cyan-dark:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.link-magenta,
+.link-magenta-dark,
+.link-magenta:visited,
+.link-magenta-dark:visited {
+  color: #ff00ff;
+}
+
+
+.link-cyan,
+.link-cyan:visited {
+  color: #00ffFF;
+}
