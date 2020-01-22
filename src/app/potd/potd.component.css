@@ -24,15 +24,15 @@ section, .article-content, .article-title {
   color: #000000;
 }
 
+.article-image, .article-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .article-image img {
   max-width: 100%;
   height: auto;
-}
-
-.article-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .article-col h1 {
@@ -75,7 +75,7 @@ section, .article-content, .article-title {
     padding: 1rem;
   }
   .article-image {
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem;
   }
 }
 
@@ -123,10 +123,11 @@ section, .article-content, .article-title {
   .article-content {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
   .article-col {
     padding: 2rem;
-    width: 40%;
+    width: 45rem;
   }
   .article-image {
     padding: 2rem 0 2rem 2rem;

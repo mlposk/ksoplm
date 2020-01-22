@@ -5,7 +5,10 @@
 
   <section class="article-wrapper">
     <article class="article-content">
-      <div *ngIf="response.media_type === 'image'" class="article-image"><img [src]="'response.url'" alt=""></div>
+      <div *ngIf="response.media_type === 'image'" class="article-image">
+        <img [src]="sanitizeURL(this.response.url)" alt="">
+        <span class="text-muted">photo: <a [href]="sanitizeURL(this.response.hdurl)" class="link-magenta-dark">{{response.copyright}}</a></span>
+      </div>
       <div *ngIf="response.media_type === 'video'" class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" [src]="sanitizeURL(this.response.youtubeURL)" allow="encrypted-media" allowfullscreen></iframe>
       </div>
