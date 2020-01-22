@@ -13,6 +13,59 @@ section, .article-content, .article-title {
   margin: 0;
 }
 
+.article-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+.article-loading .spinner {
+  width: 10rem;
+  height: 10rem;
+  animation: rotate 2s linear infinite;
+}
+
+.path {
+  stroke-width: .2rem;
+  stroke-dasharray: 89;
+  stroke-dashoffset: 0;
+  stroke: #00ffFF;
+  stroke-linecap: round;
+  animation: dash 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke: #f0f;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+    stroke: #0ff;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+    stroke: #f0f;
+  }
+}
+
 .article-wrapper {
   background: linear-gradient(120deg, #0029FF 0%, #001270 100%), radial-gradient(100% 222% at 0% 100%, #CD04FF 0%, #FF004D 57%), linear-gradient(270deg, #F2096B 0%, #ED0B0B 100%), linear-gradient(300deg, #C478B3 0%, #EA2856 100%), radial-gradient(90% 110% at 100% 100%, #96A300 45%, #875901 100%), linear-gradient(6.54deg, #20ADFD 7%, #1700A4 50%);
   background-blend-mode: exclusion, color-dodge, color-burn, color-burn, color-dodge, normal;
@@ -61,6 +114,10 @@ section, .article-content, .article-title {
     letter-spacing: -0.1rem;
     font-size: 4rem;
   }
+  .article-loading .spinner {
+    width: 5rem;
+    height: 5rem;
+  }
   .article-wrapper {
     padding: 1rem;
     margin: 0 1.25rem 2.5rem;
@@ -95,6 +152,10 @@ section, .article-content, .article-title {
     padding: 1rem;
     margin: 0 2.5rem 2rem;
   }
+  .article-loading .spinner {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -104,6 +165,10 @@ section, .article-content, .article-title {
   .article-wrapper {
     padding: 1rem;
     margin: 0 5rem 2rem;
+  }
+  .article-loading .spinner {
+    width: 10rem;
+    height: 10rem;
   }
 }
 
